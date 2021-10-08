@@ -146,6 +146,16 @@
                             <input name="product_price" type="number" class="form-control" value="{{ $product->product_price }}" >
                           <span class="text-danger">{{ $errors->has('product_price')?$errors->first('product_price'):'' }}</span>
 
+                        </div> 
+                      </div> 
+                      <div class="row mb-3 mt-4">
+                        <div class="col-md-3">
+                           <label for=" ">HollSell price :</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input name="holeSellPrice" type="number" class="form-control" value="{{ $product->holeSellPrice }}" >
+                          <span class="text-danger">{{ $errors->has('holeSellPrice')?$errors->first('holeSellPrice'):'' }}</span>
+
                         </div>
                       </div> 
 

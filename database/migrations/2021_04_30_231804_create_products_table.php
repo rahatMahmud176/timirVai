@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->text('long_description');
             //$table->integer('product_price');
             $table->float('product_price',10,2);
+            $table->float('holeSellPrice',10,2);
             $table->integer('product_qty');
             $table->integer('clickCount')->default('0');
             $table->tinyInteger('publication_status');

@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'product_name','product_image','category_id','brand_id','short_description','long_description','product_price','product_qty','publication_status'
+        'product_name','product_image','category_id','brand_id','short_description','long_description','product_price','product_qty','publication_status','holeSellPrice'
     ];
 
     protected $casts = [
@@ -37,6 +37,7 @@ class Product extends Model
          $product->short_description        =$request->short_description;
          $product->long_description         =$request->long_description;
          $product->product_price            =$request->product_price;
+         $product->holeSellPrice            =$request->holeSellPrice;
          $product->product_qty              =$request->product_qty;
          $product->publication_status       =$request->publication_status;
          $product->save();
@@ -63,6 +64,7 @@ public static function update_product_info_with_image($request,$size_id,$color_i
          $product->short_description        =$request->short_description;
          $product->long_description         =$request->long_description;
          $product->product_price            =$request->product_price;
+         $product->holeSellPrice            =$request->holeSellPrice;
          $product->product_qty              =$request->product_qty;
          $product->publication_status       =$request->publication_status;
          $product->save();
@@ -81,6 +83,7 @@ public static function update_product_info_without_image($request,$size_id,$colo
     $product->short_description        =$request->short_description;
     $product->long_description         =$request->long_description;
     $product->product_price            =$request->product_price;
+    $product->holeSellPrice            =$request->holeSellPrice;
     $product->product_qty              =$request->product_qty;
     $product->publication_status       =$request->publication_status;
     $product->save();

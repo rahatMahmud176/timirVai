@@ -65,7 +65,7 @@ public function add_product_info(Request $request)
      $color_id = implode(',',$request->color_id); 
 
       Product::add_product_info($request,$size_id,$color_id);
-      return redirect('product/add-product-page')->with('message','Product Save Successfully');
+      return redirect('product/add-product-page')->with(['msg'=>'Product Save Successfully','msgType'=>'success']);
 }
 
 public function manage_product_page()
@@ -104,7 +104,7 @@ public function update_product_info(Request $request)
           $color_id = implode(',',$request->color_id);
           Product::update_product_info_without_image($request,$size_id,$color_id); 
      }  
-     return redirect('product/manage-product-page')->with('message','Product update Successfully');
+     return redirect('product/manage-product-page')->with(['msg'=>'Product Update Successfully','msgType'=>'success']);
 }
 
 
@@ -112,7 +112,7 @@ public function delete_product(Request $request)
 {
      $product = Product::find($request->id); 
      $product->delete();
-     return redirect('product/manage-product-page')->with('delete_message','Product Delete Successfully');
+     return redirect('product/manage-product-page')->with(['msg'=>'Product Deleted Successfully','msgType'=>'error']);
 }
 
 
