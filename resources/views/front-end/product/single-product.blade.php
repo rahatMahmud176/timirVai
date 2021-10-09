@@ -15,6 +15,7 @@
                 @include('front-end.includes.sidebar')
             </div>
             <h1>from linux</h1>
+            <h2>okay boss from win</h2>
             <div class="col-sm-9 padding-right">
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
