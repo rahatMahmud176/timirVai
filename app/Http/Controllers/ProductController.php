@@ -93,14 +93,14 @@ public function update_product_info(Request $request)
 
      if($request->product_image){ 
        $this->product_info_validate($request); 
-       $size_id       = implode(',',$request->size_id); 
+       $size_id  = implode(',',$request->size_id); 
        $color_id = implode(',',$request->color_id);
        Product::update_product_info_with_image($request,$size_id,$color_id);
           
      }else{
          
           $this->product_info_validate_without_image($request);
-          $size_id       = implode(',',$request->size_id); 
+          $size_id  = implode(',',$request->size_id); 
           $color_id = implode(',',$request->color_id);
           Product::update_product_info_without_image($request,$size_id,$color_id); 
      }  
@@ -112,7 +112,7 @@ public function delete_product(Request $request)
 {
      $product = Product::find($request->id); 
      $product->delete();
-     return redirect('product/manage-product-page')->with(['msg'=>'Product Deleted Successfully','msgType'=>'error']);
+     return redirect('product/manage-product-page')->with(['msg'=>'Product Deleted !' ,'msgType'=>'error']);
 }
 
 
