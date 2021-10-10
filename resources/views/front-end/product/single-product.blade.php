@@ -14,7 +14,7 @@
             <div class="col-sm-3">
                 @include('front-end.includes.sidebar')
             </div>
-            
+            <h1>from linux</h1>
             <div class="col-sm-9 padding-right">
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
