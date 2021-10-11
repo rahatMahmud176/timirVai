@@ -32,7 +32,7 @@ class CategoryController extends Controller
           $this->category_info_validate($request);
          Category::categeoy_info_save($request);
          //return redirect('category/add-category-page')->with('message','Category Save Successfully');
-         return redirect('category/add-category-page')->with(['notification'=>'Category Save Successfully','msgType'=>'success']);
+         return redirect('category/add-category-page')->with(['msg'=>'Category Save Successfully','msgType'=>'success']);
      }
 
      public function manage_category_page(Type $var = null)

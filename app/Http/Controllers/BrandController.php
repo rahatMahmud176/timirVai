@@ -29,7 +29,7 @@ class BrandController extends Controller
 
           Brand::band_info_save($request); 
         //   return redirect('brand/add-brand-page')->with('message','');
-          return redirect('/brand/add-brand-page')->with(['notification'=>'Brand Save Successfully','msgType'=>'success']);
+          return redirect('/brand/add-brand-page')->with(['msg'=>'Brand Save Successfully','msgType'=>'success']);
      }
 
      public function manage_brand_page(Type $var = null)
