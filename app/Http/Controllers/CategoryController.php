@@ -51,14 +51,14 @@ class CategoryController extends Controller
      {
           $this->category_info_validate($request);
            Category::category_update($request);
-           return redirect('category/manage-category-page')->with('message','Category Update Successfully');
+           return redirect('category/manage-category-page')->with('msg','Category Update Successfully');
      }
 
      public function delete_category(Request $request)
      {
          $category = Category::find($request->id); 
          $category->delete();
-         return redirect('category/manage-category-page')->with('message','Category Delete Successfully');
+         return redirect('category/manage-category-page')->with('msg','Category Delete Successfully');
      }
 
 

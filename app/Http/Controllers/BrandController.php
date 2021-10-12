@@ -49,13 +49,13 @@ class BrandController extends Controller
      {
         $this->brand_info_valided($request);
          Brand::band_update($request);
-         return redirect('brand/manage-brand-page')->with('message','Brand Update Successfully');
+         return redirect('brand/manage-brand-page')->with('msg','Brand Update Successfully');
      }
      public function delete_brand(Request $request)
      {
          $brand = Brand::find($request->id); 
          $brand->delete();
-         return redirect('brand/manage-brand-page')->with('message','Brand Delete Successfully');
+         return redirect('brand/manage-brand-page')->with('msg','Brand Delete Successfully');
      }
 
 

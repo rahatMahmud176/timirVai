@@ -29,7 +29,7 @@ class SizeController extends Controller
        
        $this->size_info_validate($request);
        Size::size_info_save($request);       
-       return  redirect('size/add-size-page')->with('message','Size info save successfully');
+       return  redirect('size/add-size-page')->with(['msg'=>'Size info save successfully','msgType'=>'success']);
     }
     public function manage_size_page(Type $var = null)
     {
@@ -47,13 +47,13 @@ class SizeController extends Controller
     {
         $this->size_info_validate($request);
         Size::update_size_info($request);       
-        return  redirect('size/manage-size-page')->with('message','Size info Update successfully');
+        return  redirect('size/manage-size-page')->with(['msg'=>'Size Update successfully','msgType'=>'success']);
     }
     public function delete_size(Request $request)
     {
          $size = Size::find($request->id); 
          $size->delete();
-         return redirect('size/manage-size-page')->with('message','Size info Delete successfully');
+         return redirect('size/manage-size-page')->with(['msg'=>'Size Deleted','msgType'=>'error']);
     }
 
 

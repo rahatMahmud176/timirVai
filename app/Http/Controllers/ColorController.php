@@ -31,7 +31,7 @@ class ColorController extends Controller
         $this->color_info_validate($request);
         Color::save_color_info($request);
         // return redirect('color/add-color-page')->with('message','Color save Successfully');
-        return redirect('/color/add-color-page')->with(['notification'=>'Color save Successfully','msgType'=>'success']);
+        return redirect('/color/add-color-page')->with(['msg'=>'Color save Successfully','msgType'=>'success']);
 
 
     }
@@ -62,7 +62,7 @@ class ColorController extends Controller
 
              Color::update_color_with_image($request);
             // return redirect('')->with('message','Color Update Successfully');
-             return redirect('/color/manage-color-page')->with(['notification'=>'Color Update Successfully','msgType'=>'success']);
+             return redirect('/color/manage-color-page')->with(['msg'=>'Color Update Successfully','msgType'=>'success']);
 
              
          }else{
@@ -75,7 +75,7 @@ class ColorController extends Controller
              
              Color::update_color_without_image($request);
             //  return redirect('color/manage-color-page')->with('message','Color Update Successfully');
-             return redirect('/color/manage-color-page')->with(['notification'=>'Color Update Successfully','msgType'=>'success']);
+             return redirect('/color/manage-color-page')->with(['msg'=>'Color Update Successfully','msgType'=>'success']);
 
          }
 
@@ -86,7 +86,7 @@ class ColorController extends Controller
         $color = Color::find($request->id); 
         $color->delete();
         // return redirect('color/manage-color-page')->with('message','Color delete Successfully');
-        return redirect('/color/manage-color-page')->with(['notification'=>'Color Delete Successfully','msgType'=>'error']);
+        return redirect('/color/manage-color-page')->with(['msg'=>'Color Delete Successfully','msgType'=>'error']);
 
     }
 
